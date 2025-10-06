@@ -1,10 +1,4 @@
 name: zmk-keyboard-empire
 build:
-# If depends added later, need to add west.yml to root
-#  depends:
-#  cmake: .
-#  kconfig: Kconfig
   settings:
     board_root: .
-#    dts_root: .
-#    snippet_root:  .
