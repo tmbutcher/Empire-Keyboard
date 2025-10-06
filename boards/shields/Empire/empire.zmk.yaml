@@ -1,0 +1,10 @@
+file_format: "1"
+id: empire
+name: Empire
+type: shield
+url: https://github.com/tmbutcher/empire/
+requires: [pro_micro]
+features:
+  - keys
+  - backlight
+  - studio
