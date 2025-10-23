@@ -19,7 +19,7 @@
 		default_layer { 
 			display-name = "Default";
 			bindings = <
-&kp N1		  &kp N2		&kp N3		  &kp N4		&kp N5		  &kp N6		&kp N7		  &kp N8		&kp N9		  &kp N0		&kp MINUS	  &kp EQUAL		&kp BSPC
+&rgb_ug RGB_TOG		  &kp N2		&kp N3		  &kp N4		&kp N5		  &kp N6		&kp N7		  &kp N8		&kp N9		  &kp N0		&kp MINUS	  &kp EQUAL		&kp BSPC
 &kp Q		  &kp W			&kp E		  &kp R						  &kp R			&kp T		  &kp I			&kp O		  &kp Y			&kp P		  xxx			xxx
 &kp A		  &kp S			&kp D		  &kp F						  &kp V			&kp H		  &kp J			&kp K		  &kp L			&kp APOS					&kp ENTER
 &kp Z		  &kp X			&kp C		  							  &kp B			&kp N		  &kp M													  				&mo SHIFT
