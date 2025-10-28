@@ -8,7 +8,7 @@
 #define DEF		0
 #define SHIFT	1
 #define RGB		2
-#define &led	&rgb_ug
+#define led		&rgb_ug
 #define HSB		RGB_COLOR_HSB
 
 #define xxx		&none	
@@ -45,8 +45,8 @@ xxx			  &kp RS(LALT)											  &kp RS(SPACE)											  &kp RS(RALT)	&kp RS(R
 		LED_layer { 
 			display-name = "LED";
 			bindings = <
-&led HSB(0, 0, 15)	&led HSB(0, 100, 15)	&led HSB(40, 100, 15)	&led HSB(80, 100, 15)	&led HSB(120, 100, 15)	&led HSB(160, 100, 15)	&led HSB(200, 100, 15)	&led HSB(240, 100, 15)	&led HSB(280, 100, 15)	&led HSB(320, 100, 15)	&led RGB_BRD	&led RGB_BRI	&led RGB_TOG
-xxx					xxx						xxx						xxx												xxx						xxx						xxx						xxx						xxx						xxx				xxx				&led RGB_EFF
+led HSB(0, 0, 15)	led HSB(0, 100, 15)		led HSB(40, 100, 15)	led HSB(80, 100, 15)	led HSB(120, 100, 15)	led HSB(160, 100, 15)	led HSB(200, 100, 15)	led HSB(240, 100, 15)	led HSB(280, 100, 15)	led HSB(320, 100, 15)	led RGB_BRD		led RGB_BRI		led RGB_TOG
+xxx					xxx						xxx						xxx												xxx						xxx						xxx						xxx						xxx						xxx				xxx				led RGB_EFF
 &bt BT_SEL 0		&bt BT_SEL 1			&bt BT_SEL 2			&bt BT_SEL 3									&bt BT_SEL 4			xxx						xxx						xxx						xxx						xxx								xxx
 &bt BT_CLR			xxx						xxx																		xxx						xxx						xxx																										xxx
 &mo RGB				xxx																								xxx																								&sys_reset				xxx								&bootloader
