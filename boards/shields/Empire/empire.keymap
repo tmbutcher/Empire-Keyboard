@@ -7,6 +7,9 @@
 
 #define DEF		0
 #define SHIFT	1
+#define RGB		2
+#define &led	&rgb_ug
+#define HSB		RGB_COLOR_HSB
 
 #define xxx		&none	
 #define ___		&trans
@@ -20,11 +23,11 @@
 		default_layer { 
 			display-name = "Default";
 			bindings = <
-&rgb_ug RGB_TOG		  &kp N2		&kp N3		  &kp N4		&kp N5		  &kp N6		&kp N7		  &kp N8		&kp N9		  &kp N0		&kp MINUS	  &kp EQUAL		&kp BSPC
+&kp N1		  &kp N2		&kp N3		  &kp N4		&kp N5		  &kp N6		&kp N7		  &kp N8		&kp N9		  &kp N0		&kp MINUS	  &kp EQUAL		&kp BSPC
 &kp Q		  &kp W			&kp E		  &kp R						  &kp R			&kp T		  &kp I			&kp O		  &kp Y			&kp P		  xxx			xxx
 &kp A		  &kp S			&kp D		  &kp F						  &kp V			&kp H		  &kp J			&kp K		  &kp L			&kp APOS					&kp ENTER
 &kp Z		  &kp X			&kp C		  							  &kp B			&kp N		  &kp M													  				&mo SHIFT
-&kp LCTRL	  &kp LALT												  &kp SPACE												  &kp RALT		&kp RGUI					&kp RCTRL
+&mo RGB	  	  &kp LALT												  &kp SPACE												  &kp RALT		&kp RGUI					&kp RCTRL
 			>;
 		};
 	
@@ -35,9 +38,33 @@
 &kp Q		  &kp W			&kp RS(E)	  &kp R						  &kp RS(R)		&kp RS(T)	  &kp RS(I)		&kp RS(O)	  &kp RS(Y)		&kp RS(P)	  xxx			xxx
 &kp RS(A)	  &kp RS(S)		&kp RS(D)	  &kp RS(F)					  &kp RS(V)		&kp RS(H)	  &kp RS(J)		&kp RS(K)	  &kp RS(L)		&kp RS(APOS)				&kp RS(ENTER)
 &kp RS(Z)	  &kp RS(X)		&kp RS(C)		  						  &kp RS(B)		&kp RS(N)	  &kp RS(M)																&mo SHIFT
-&kp RS(LCTRL) &kp RS(LALT)											  &kp RS(SPACE)											  &kp RS(RALT)	&kp RS(RGUI)				&kp RS(RCTRL)
+xxx			  &kp RS(LALT)											  &kp RS(SPACE)											  &kp RS(RALT)	&kp RS(RGUI)				&kp RS(RCTRL)
 			>;
 		};
+
+		LED_layer { 
+			display-name = "LED";
+			bindings = <
+&led HSB(0, 0, 15)	&led HSB(0, 100, 15)	&led HSB(40, 100, 15)	&led HSB(80, 100, 15)	&led HSB(120, 100, 15)	&led HSB(160, 100, 15)	&led HSB(200, 100, 15)	&led HSB(240, 100, 15)	&led HSB(280, 100, 15)	&led HSB(320, 100, 15)	&led RGB_BRD	&led RGB_BRI	&led RGB_TOG
+xxx					xxx						xxx						xxx												xxx						xxx						xxx						xxx						xxx						xxx				xxx				&led RGB_EFF
+&bt BT_SEL 0		&bt BT_SEL 1			&bt BT_SEL 2			&bt BT_SEL 3									&bt BT_SEL 4			xxx						xxx						xxx						xxx						xxx								xxx
+&bt BT_CLR			xxx						xxx																		xxx						xxx						xxx																										xxx
+&mo RGB				xxx																								xxx																								&sys_reset				xxx								&bootloader
+			>;
+		};
+
+/* Layer + underglow color
+
+To trigger a different underglow when the macro is pressed, and when it is released, we use the macro "press" activation mode whenever triggering the &rgb_ug behavior:
+
+wait-ms = <0>;
+tap-ms = <0>;
+bindings
+    = <&macro_press &mo 1>
+    , <&macro_tap &rgb_ug RGB_COLOR_HSB(128,100,100)>
+    , <&macro_pause_for_release>
+    , <&macro_release &mo 1>
+    , <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,50)>; */
 
 // [0] = LAYOUT_default( /* Base */
 // 		KC_1,		KC_2,	KC_3,	KC_4,	KC_5,	KC_6,	KC_7,	KC_8,	KC_9,	KC_0,		KC_MINS,	KC_EQL,	KC_BSPC,
